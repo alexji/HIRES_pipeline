@@ -75,7 +75,7 @@ def write_reduction_table(unique_obj_as_trace=True):
         objects = np.unique(tab["OBJNAME"])
         for obj in objects:
             if obj in MANUAL_TRACE_DICT:
-                file_to_use = MANUAL_TRACE_DICT[obj]
+                file_to_use = MANUAL_TRACE_DICT[obj]+".fits"
                 tab["TRACE"][tab["OBJNAME"]==obj] = file_to_use
                 print("Using {} as trace for {} (MANUAL)".format(file_to_use, obj))
             else:
